@@ -1,85 +1,73 @@
 # json-vector-search
 
-Vector search over a JSON file of user data, all local 
+Vector search over JSON user data with RAG capabilities via FastAPI
+Semantic search over user profiles with:
 
-Simple setup:
+- Local vector indexing using FAISS
+- REST API endpoint for RAG-augmented responses
+- OpenAI integration for contextual responses
 
-- JSON input for users
-- Vectorize each user using sentence-transformers
-- Store embeddings in FAISS
-- Search with a natural language query
+## Components
+
+- `users.json` - Source data for user profiles
+- `index.py` - Builds and saves the FAISS index and user metadata
+- `main.py` - FastAPI server implementing the `/prompt` endpoint
+- `user_index.faiss` - Persisted vector index
+- `metadata.pkl` - Serialized user profile data
 
 ## Setup
 
-Make sure you have Python 3.8+.
+Requires Python 3.8+
 
 ```bash
 git clone https://github.com/yourusername/json-vector-search.git
 cd json-vector-search
 pip install -r requirements.txt
+export OPENAI_API_KEY=your_key_here
 ```
 
-## Files
+___
 
-- `users.json`: raw data (name, bio, interests, etc.)
-- `index.py`: runs once to build and save the FAISS index
-- `search.py`: enter a query and get the most relevant users
-- `metadata.pkl`: saved user data
-- `user_index.faiss`: saved vector index
+## How to use
 
-## Usage
-
-### 1. Edit `users.json`  
-Put your user data here. Format:
-
-```json
-[
-  {
-    "name": "Alice",
-    "bio": "Engineer interested in robotics.",
-    "interests": ["AI", "robotics"]
-  }
-]
-```
-
-### 2. Build the index
+### 1. Build the index
 
 ```bash
 python index.py
 ```
 
-### 3. Run search
+### 2. Start the API server
 
 ```bash
-python search.py
+uvicorn main:app --reload
 ```
 
-Then type something like:
+### 3. Query the API
 
-```
-Search query: robotics
-```
-
-And you’ll get back the top-matching users.
-
-## Notes
-
-- Uses `sentence-transformers/all-MiniLM-L6-v2` for embeddings.
-- Works offline
-- You can expand this to use a UI or hook it into an LLM for RAG stuff
-
-___
-
-## Workflow
-
-```
-You ask:      "Who are some AI-focused users I should contact?"
-↓
-Vector search: Find top-matching user bios
-↓
-LLM input:     Inject relevant bios into prompt
-↓
-LLM output:    "Here are 3 AI-focused users: Alice, Bob, Eve. Alice also does robotics."
+```bash
+curl -X POST http://localhost:8000/prompt \
+  -H "Content-Type: application/json" \
+  -d '{"prompt": "Who knows about computer vision?"}'
 ```
 
+## Architecture
 
+1. User sends query to `/prompt` endpoint
+2. System encodes query using Sentence Transformers
+3. FAISS performs vector similarity search to find relevant user profiles
+4. Top profiles are injected into the OpenAI prompt
+5. GPT-4 generates contextually relevant response
+6. Response returns to the client
+
+## Technical Details
+
+- Embedding model: `all-MiniLM-L6-v2` (384 dimensions)
+- Vector similarity: L2 distance
+- LLM: GPT-4
+- Index type: FlatL2 (exhaustive search)
+
+## Performance Considerations
+
+- In-memory vector search suitable for datasets under ~100k profiles
+- No rate limiting implemented
+- Consider caching frequent queries
