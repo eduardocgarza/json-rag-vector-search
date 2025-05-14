@@ -20,7 +20,6 @@ Semantic search over user profiles with:
 Requires Python 3.8+
 
 ```bash
-git clone https://github.com/yourusername/json-vector-search.git
 cd json-vector-search
 pip install -r requirements.txt
 export OPENAI_API_KEY=your_key_here
