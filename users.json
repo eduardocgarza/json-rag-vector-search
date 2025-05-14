@@ -1,0 +1,16 @@
+[
+  {
+    "id": 1,
+    "name": "Alice Johnson",
+    "email": "alice@example.com",
+    "bio": "Software engineer interested in AI and robotics.",
+    "interests": ["AI", "robotics", "hiking"]
+  },
+  {
+    "id": 2,
+    "name": "Bob Smith",
+    "email": "bob@example.com",
+    "bio": "Technical writer and Python enthusiast.",
+    "interests": ["writing", "python", "open source"]
+  }
+]
