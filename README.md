@@ -9,7 +9,7 @@ Simple setup:
 - Store embeddings in FAISS
 - Search with a natural language query
 
-## 🔧 Setup
+## Setup
 
 Make sure you have Python 3.8+.
 
@@ -19,7 +19,7 @@ cd json-vector-search
 pip install -r requirements.txt
 ```
 
-## 📦 Files
+## Files
 
 - `users.json`: raw data (name, bio, interests, etc.)
 - `index.py`: runs once to build and save the FAISS index
@@ -27,7 +27,7 @@ pip install -r requirements.txt
 - `metadata.pkl`: saved user data
 - `user_index.faiss`: saved vector index
 
-## 🚀 Usage
+## Usage
 
 ### 1. Edit `users.json`  
 Put your user data here. Format:
@@ -62,8 +62,24 @@ Search query: robotics
 
 And you’ll get back the top-matching users.
 
-## 💡 Notes
+## Notes
 
 - Uses `sentence-transformers/all-MiniLM-L6-v2` for embeddings.
 - Works offline
 - You can expand this to use a UI or hook it into an LLM for RAG stuff
+
+___
+
+## Workflow
+
+```
+You ask:      "Who are some AI-focused users I should contact?"
+↓
+Vector search: Find top-matching user bios
+↓
+LLM input:     Inject relevant bios into prompt
+↓
+LLM output:    "Here are 3 AI-focused users: Alice, Bob, Eve. Alice also does robotics."
+```
+
+

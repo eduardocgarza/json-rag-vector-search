@@ -12,5 +12,131 @@
     "email": "bob@example.com",
     "bio": "Technical writer and Python enthusiast.",
     "interests": ["writing", "python", "open source"]
+  },
+  {
+    "id": 3,
+    "name": "Carol Martinez",
+    "email": "carol@example.com",
+    "bio": "UX designer focused on accessibility and inclusive design.",
+    "interests": ["design", "accessibility", "photography"]
+  },
+  {
+    "id": 4,
+    "name": "David Chen",
+    "email": "david@example.com",
+    "bio": "Data scientist specializing in natural language processing.",
+    "interests": ["NLP", "machine learning", "chess"]
+  },
+  {
+    "id": 5,
+    "name": "Elena Rodriguez",
+    "email": "elena@example.com",
+    "bio": "Front-end developer with a passion for responsive design.",
+    "interests": ["CSS", "JavaScript", "cycling"]
+  },
+  {
+    "id": 6,
+    "name": "Frank Wilson",
+    "email": "frank@example.com",
+    "bio": "DevOps engineer focused on cloud infrastructure and automation.",
+    "interests": ["AWS", "Kubernetes", "cooking"]
+  },
+  {
+    "id": 7,
+    "name": "Grace Lee",
+    "email": "grace@example.com",
+    "bio": "Mobile app developer specializing in cross-platform solutions.",
+    "interests": ["React Native", "Flutter", "traveling"]
+  },
+  {
+    "id": 8,
+    "name": "Hassan Ahmed",
+    "email": "hassan@example.com",
+    "bio": "Cybersecurity analyst with expertise in threat detection.",
+    "interests": ["cybersecurity", "ethical hacking", "gaming"]
+  },
+  {
+    "id": 9,
+    "name": "Isabelle Wong",
+    "email": "isabelle@example.com",
+    "bio": "Product manager bridging technical and business requirements.",
+    "interests": ["product strategy", "agile", "yoga"]
+  },
+  {
+    "id": 10,
+    "name": "James Taylor",
+    "email": "james@example.com",
+    "bio": "Full-stack developer with focus on MEAN stack applications.",
+    "interests": ["Angular", "Node.js", "basketball"]
+  },
+  {
+    "id": 11,
+    "name": "Kira Patel",
+    "email": "kira@example.com",
+    "bio": "Database administrator with expertise in performance optimization.",
+    "interests": ["SQL", "database design", "reading"]
+  },
+  {
+    "id": 12,
+    "name": "Leo Nguyen",
+    "email": "leo@example.com",
+    "bio": "Game developer specializing in Unity and C#.",
+    "interests": ["game development", "3D modeling", "virtual reality"]
+  },
+  {
+    "id": 13,
+    "name": "Maya Jackson",
+    "email": "maya@example.com",
+    "bio": "QA engineer focused on automated testing solutions.",
+    "interests": ["Selenium", "software testing", "gardening"]
+  },
+  {
+    "id": 14,
+    "name": "Noah Kim",
+    "email": "noah@example.com",
+    "bio": "Blockchain developer working on decentralized applications.",
+    "interests": ["blockchain", "smart contracts", "rock climbing"]
+  },
+  {
+    "id": 15,
+    "name": "Olivia Bennett",
+    "email": "olivia@example.com",
+    "bio": "Technical project manager with Agile certification.",
+    "interests": ["project management", "Scrum", "pottery"]
+  },
+  {
+    "id": 16,
+    "name": "Pavel Ivanov",
+    "email": "pavel@example.com",
+    "bio": "Systems architect specializing in distributed systems.",
+    "interests": ["microservices", "system design", "skiing"]
+  },
+  {
+    "id": 17,
+    "name": "Quinn Foster",
+    "email": "quinn@example.com",
+    "bio": "UI developer with expertise in animation and interactive experiences.",
+    "interests": ["SVG", "WebGL", "digital art"]
+  },
+  {
+    "id": 18,
+    "name": "Ravi Sharma",
+    "email": "ravi@example.com",
+    "bio": "Machine learning engineer focused on computer vision.",
+    "interests": ["computer vision", "TensorFlow", "meditation"]
+  },
+  {
+    "id": 19,
+    "name": "Sophia Garcia",
+    "email": "sophia@example.com",
+    "bio": "Information security analyst specializing in compliance frameworks.",
+    "interests": ["GDPR", "security compliance", "classical music"]
+  },
+  {
+    "id": 20,
+    "name": "Tomas Hoffman",
+    "email": "tomas@example.com",
+    "bio": "Backend developer with expertise in scalable API design.",
+    "interests": ["REST APIs", "GraphQL", "woodworking"]
   }
 ]

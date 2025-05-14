@@ -25,4 +25,4 @@ index = faiss.IndexFlatL2(dimension)
 index.add(np.array(embeddings))
 faiss.write_index(index, "user_index.faiss")
 
-print("Index built and saved.")
+print("✅ Index built and saved.")
